@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field, computed_field
 from datetime import datetime
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel
 from datetime import datetime
 from typing import Optional
 
@@ -9,14 +9,14 @@ from typing import Optional
 class UserCreate(BaseModel):
     name: str
     phone: str
-    email: Optional[EmailStr] = None
+    email: Optional[str] = None
     nationality: int
 
 
 class UserUpdate(BaseModel):
     name: Optional[str]
     phone: Optional[str]
-    email: Optional[EmailStr]
+    email: Optional[str]
     nationality_id: Optional[int]
     status: Optional[str]
 
@@ -25,7 +25,7 @@ class UserResponse(BaseModel):
     id: int
     name: str
     phone: str
-    email: Optional[EmailStr]
+    email: Optional[str]
     nationality_id: int
     created_at: datetime
     status: str
