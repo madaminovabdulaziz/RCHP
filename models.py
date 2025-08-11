@@ -5,6 +5,7 @@ from sqlalchemy.orm import relationship
 
 class ModelUser(Base):
     __tablename__ = 'users'
+    id = Column(Integer, autoincrement=True, primary_key=True)
     name = Column(String(255))
     phone = Column(String(255), unique=True)
     email = Column(String(255), unique=True)
@@ -12,7 +13,6 @@ class ModelUser(Base):
     nationality = relationship("ModelNationality", back_populates="users")
     created_at = Column(TIMESTAMP)
     status = Column(String(255))
-    id = Column(Integer, autoincrement=True, primary_key=True)
 
 
 class ModelAdmin(Base):
