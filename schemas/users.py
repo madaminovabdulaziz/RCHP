@@ -22,7 +22,7 @@ class UserUpdate(BaseModel):
 
 
 class UserResponse(BaseModel):
-    id: int
+    id: str
     name: str
     phone: str
     email: Optional[str]
