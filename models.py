@@ -17,7 +17,7 @@ class ModelUser(Base):
 
 class ModelAdmin(Base):
     __tablename__ = 'admins'
-    login = Column(String(255), unique=True)
+    login = Column(String(255), unique=True, primary_key=True)
     password = Column(String(255))
 
 
