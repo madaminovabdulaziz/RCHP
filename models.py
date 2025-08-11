@@ -12,6 +12,7 @@ class ModelUser(Base):
     nationality = relationship("ModelNationality", back_populates="users")
     created_at = Column(TIMESTAMP)
     status = Column(String(255))
+    id = Column(Integer)
 
 
 class ModelAdmin(Base):
