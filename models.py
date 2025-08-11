@@ -5,10 +5,10 @@ from sqlalchemy.orm import relationship
 
 class ModelUser(Base):
     __tablename__ = 'users'
-    id = Column(Integer, autoincrement=True, primary_key=True)
+    id = Column(Integer, autoincrement=True)
     name = Column(String(255))
     phone = Column(String(255), unique=True)
-    email = Column(String(255), unique=True)
+    email = Column(String(255), unique=True, primary_key=True)
     nationality_id = Column(Integer, ForeignKey('nationality.id'), nullable=False)
     nationality = relationship("ModelNationality", back_populates="users")
     created_at = Column(TIMESTAMP)
