@@ -1,14 +1,15 @@
 from sqlalchemy import Column, String, Integer, TIMESTAMP, ForeignKey
 from database import Base, engine
 from sqlalchemy.orm import relationship
+import uuid
 
 
 class ModelUser(Base):
     __tablename__ = 'users'
-    id = Column(Integer, autoincrement=True)
+    id = Column(String(255), primary_key=True, default=lambda: str(uuid.uuid4()))
     name = Column(String(255))
     phone = Column(String(255), unique=True)
-    email = Column(String(255), unique=True, primary_key=True)
+    email = Column(String(255), unique=True, )
     nationality_id = Column(Integer, ForeignKey('nationality.id'), nullable=False)
     nationality = relationship("ModelNationality", back_populates="users")
     created_at = Column(TIMESTAMP)
