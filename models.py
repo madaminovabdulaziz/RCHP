@@ -6,13 +6,13 @@ from sqlalchemy.orm import relationship
 class ModelUser(Base):
     __tablename__ = 'users'
     name = Column(String(255))
-    phone = Column(String(255), unique=True, primary_key=True)
+    phone = Column(String(255), unique=True)
     email = Column(String(255), unique=True)
     nationality_id = Column(Integer, ForeignKey('nationality.id'), nullable=False)
     nationality = relationship("ModelNationality", back_populates="users")
     created_at = Column(TIMESTAMP)
     status = Column(String(255))
-    id = Column(Integer)
+    id = Column(Integer, autoincrement=True, primary_key=True)
 
 
 class ModelAdmin(Base):
