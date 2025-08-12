@@ -53,7 +53,7 @@ from sqlalchemy.orm import sessionmaker
 MYSQL_HOST = "mysql.railway.internal"
 MYSQL_DATABASE = "railway"
 MYSQL_USER = "root"
-MYSQL_PASSWORD = "DCTqsTPGEsTJSdCqmYdIWvXISqZvEzyR"
+MYSQL_PASSWORD = "lBTazBqQODWYODlbhyEkZwmEHaDRCEQI"
 MYSQL_PORT = 3306
 
 connection_string = f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}:{MYSQL_PORT}/{MYSQL_DATABASE}"
